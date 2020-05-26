@@ -2,7 +2,8 @@
 
 This Github action will add comment and/or status check with a link to open this project on online Che instance.
 
-![alt text](../images/status-check-highlight.png?raw=true)
+![PR Status Check](../images/status-check-highlight.png?raw=true)
+![PR Comment](../images/add-comment.png?raw=true)
 
 # Usage
 
