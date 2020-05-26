@@ -8,7 +8,6 @@ This Github action will add comment and/or status check with a link to open this
 #### Commenting Pull Request:
 ![PR Comment](../images/comment-pr.png?raw=true)
 
-
 # Usage
 
 ```yaml
