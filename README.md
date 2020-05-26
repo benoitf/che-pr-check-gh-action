@@ -18,7 +18,7 @@ jobs:
   add-link:
     runs-on: ubuntu-latest
     steps:
-      - name: Eclipse Che Pull Request Check
+      - name: Eclipse Che Pull Request Link
         id: che-pr-check-gh-action
         uses: benoitf/che-pr-check-gh-action@master
         with:
