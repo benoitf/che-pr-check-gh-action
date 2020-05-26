@@ -23,21 +23,20 @@ describe('Test Helper AddCommentHelper', () => {
     container.bind(Octokit).toConstantValue(octokit);
     const addStatusCheckHelper = container.get(AddStatusCheckHelper);
 
-
-    const payload: WebhookPayloadPullRequest= {
-
-    pull_request: {
-      head: {
-      sha: 456},
-      number: 123
-    },
-    repository: {
-      owner: {
-        login: "foo"
-      }
-      , name: "bar"
-    } } as any;
-
+    const payload: WebhookPayloadPullRequest = {
+      pull_request: {
+        head: {
+          sha: 456,
+        },
+        number: 123,
+      },
+      repository: {
+        owner: {
+          login: 'foo',
+        },
+        name: 'bar',
+      },
+    } as any;
 
     const description = 'my-desc';
     const context = 'my-context';

@@ -11,7 +11,6 @@ import { WebhookPayloadPullRequest } from '@octokit/webhooks';
 describe('Test Action PullRequestAction', () => {
   let container: Container;
 
-
   beforeEach(() => {
     container = new Container();
     container.bind(PullRequestAction).toSelf().inSingletonScope();
@@ -51,7 +50,7 @@ describe('Test Action PullRequestAction', () => {
 
     const json = await fs.readJSON(path.join(__dirname, '..', '_data', 'pull_request', 'opened', 'create-pr.json'));
 
-    let receivedPayload: WebhookPayloadPullRequest= {} as any;
+    let receivedPayload: WebhookPayloadPullRequest = {} as any;
     const fooMock: any = { dummyCall: jest.fn() };
     await pullRequestAction.registerCallback(['opened'], async (payload: WebhookPayloadPullRequest) => {
       fooMock.dummyCall();
@@ -65,6 +64,5 @@ describe('Test Action PullRequestAction', () => {
     expect(receivedPayload.repository.owner.login).toEqual('benoitf');
     expect(receivedPayload.number).toEqual(9);
     expect(receivedPayload.sender.login).toEqual('chetrend');
-
   });
 });

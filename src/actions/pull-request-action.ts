@@ -1,6 +1,5 @@
-import { WebhookPayloadPullRequest } from '@octokit/webhooks';
-
 import { PullRequestListener } from '../api/pull-request-listener';
+import { WebhookPayloadPullRequest } from '@octokit/webhooks';
 import { injectable } from 'inversify';
 
 @injectable()

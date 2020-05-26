@@ -23,19 +23,17 @@ describe('Test Helper AddCommentHelper', () => {
     container.bind(Octokit).toConstantValue(octokit);
     const addCommentHelper = container.get(AddCommentHelper);
 
-
-    const payload: WebhookPayloadPullRequest= {
-
-    pull_request: {
-      number: 123
-    },
-    repository: {
-      owner: {
-        login: "foo"
-      }
-      , name: "bar"
-    } } as any;
-
+    const payload: WebhookPayloadPullRequest = {
+      pull_request: {
+        number: 123,
+      },
+      repository: {
+        owner: {
+          login: 'foo',
+        },
+        name: 'bar',
+      },
+    } as any;
 
     const comment = 'my-comment';
 

@@ -1,8 +1,11 @@
 import 'reflect-metadata';
 
 import { AddCommentHelper } from '../src/helpers/add-comment-helper';
+import { AddStatusCheckHelper } from '../src/helpers/add-status-check-helper';
 import { Analysis } from '../src/analysis';
+import { Configuration } from '../src/api/configuration';
 import { Container } from 'inversify';
+import { HandlePullRequestLogic } from '../src/logic/handle-pull-request-logic';
 import { Handler } from '../src/api/handler';
 import { InversifyBinding } from '../src/inversify-binding';
 import { Logic } from '../src/api/logic';
@@ -11,16 +14,13 @@ import { PullRequestAction } from '../src/actions/pull-request-action';
 import { PullRequestHandler } from '../src/handler/pull-request-handler';
 import { PullRequestListener } from '../src/api/pull-request-listener';
 import { TemplateReader } from '../src/template/template-reader';
-import { AddStatusCheckHelper } from '../src/helpers/add-status-check-helper';
-import { HandlePullRequestLogic } from '../src/logic/handle-pull-request-logic';
-import { Configuration } from '../src/api/configuration';
 
 describe('Test InversifyBinding', () => {
   test('test bindings', async () => {
     const addComment = true;
     const addStatus = true;
     const cheInstance = 'https://foo.com';
-    
+
     const inversifyBinding = new InversifyBinding('foo', addComment, addStatus, cheInstance);
     const container: Container = inversifyBinding.initBindings();
 
@@ -43,7 +43,6 @@ describe('Test InversifyBinding', () => {
     expect(configuration.addComment()).toEqual(addComment);
     expect(configuration.addStatus()).toEqual(addStatus);
     expect(configuration.cheInstance()).toEqual(cheInstance);
-    
 
     // helpers
     expect(container.get(AddCommentHelper)).toBeDefined();
@@ -57,7 +56,6 @@ describe('Test InversifyBinding', () => {
     expect(logics).toBeDefined();
     expect(logics.find((logic) => logic.constructor.name === HandlePullRequestLogic.name)).toBeTruthy();
 
-    
     const octokitBuilder = container.get(OctokitBuilder);
     expect(octokitBuilder).toBeDefined();
 

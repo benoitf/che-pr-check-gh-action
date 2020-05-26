@@ -16,7 +16,12 @@ import { templatesModule } from './template/template-module';
 export class InversifyBinding {
   private container: Container;
 
-  constructor(private githubToken: string, private addComment: boolean, private addStatus: boolean, private cheInstance: string) {}
+  constructor(
+    private githubToken: string,
+    private addComment: boolean,
+    private addStatus: boolean,
+    private cheInstance: string
+  ) {}
 
   public initBindings(): Container {
     this.container = new Container();
@@ -31,7 +36,7 @@ export class InversifyBinding {
     // configuration
     const configuration: Configuration = {
       addComment: () => this.addComment,
-      addStatus: () => this.addComment,
+      addStatus: () => this.addStatus,
       cheInstance: () => this.cheInstance,
     };
     this.container.bind(OctokitBuilder).toSelf().inSingletonScope();

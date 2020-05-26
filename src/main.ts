@@ -32,7 +32,12 @@ export class Main {
       cheInstance = 'https://che.openshift.io';
     }
 
-    const inversifyBinbding = new InversifyBinding(githubToken, addComment === 'true', addStatus === 'true', cheInstance);
+    const inversifyBinbding = new InversifyBinding(
+      githubToken,
+      addComment === 'true',
+      addStatus === 'true',
+      cheInstance
+    );
     const container = inversifyBinbding.initBindings();
     const analysis = container.get(Analysis);
     await analysis.analyze(github.context);

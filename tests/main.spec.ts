@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import 'reflect-metadata';
 
 import * as core from '@actions/core';
@@ -41,7 +42,4 @@ describe('Test Main', () => {
     await main.start();
     expect(core.setFailed).toBeCalledTimes(0);
   });
-
-
-
 });
