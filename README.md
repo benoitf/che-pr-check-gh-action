@@ -25,6 +25,13 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+# Scenarios
+
+- [Add comment on pull requests](#add-comment-on-pull-requests)
+- [Disable status check on pull requests](#disable-status-check-on-pull-requests)
+- [Customize the link to online Eclipse Che instance](#customize-the-link-to-online-eclipse-che-instance)
+
+
 
 ## Add comment on pull requests
 
