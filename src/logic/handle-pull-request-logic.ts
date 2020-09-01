@@ -44,7 +44,7 @@ export class HandlePullRequestLogic implements Logic {
   }
 
   protected async handleComment(payload: WebhookPayloadPullRequest, targetUrl: string): Promise<void> {
-    const comment = `Open Developer Workspace:\n[![Contribute](https://che.openshift.io/factory/resources/factory-contribute.svg)](${targetUrl})`;
+    const comment = `Open Developer Workspace:\n[![Contribute](https://www.eclipse.org/che/contribute.svg)](${targetUrl})`;
     await this.addCommentHelper.addComment(comment, payload);
   }
 
