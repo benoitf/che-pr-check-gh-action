@@ -9,7 +9,7 @@
     "@actions/core": "^1.2.4",
     "@actions/github": "^2.2.0",
     "@octokit/webhooks": "^7.5.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "fs-extra": "^9.0.0",
     "handlebars": "^4.7.6",
     "inversify": "^5.0.1",
